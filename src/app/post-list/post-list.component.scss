@@ -1,0 +1,58 @@
+#banniere_image
+{
+
+    /*Caractèristique du fond*/
+   /* background: url('../assets/pres3.jpg') no-repeat; *//*Image de la bannière,sans répétition de celle-ci*/
+    opacity: 0.6;
+    z-index : -1;
+
+    /*Caractèristique des dimensions*/
+    height: 400px; /* hauteur de l'image */
+    background-size: 100%;/* largeur de l'image */
+
+    
+    /*Caractèristique de la position de la bannière image*/
+    /*position: relative; *//*l'élèment est placé sous l'élèment absolu*/
+    margin-top: 0px; /*taille espace entre la bordure du haut et le bloc suivant*/
+ 
+
+}
+
+#presentation {
+    
+    color: #F6F5F1;
+
+}
+
+#demande_devis {
+    
+    border-radius: 14px;
+    position: relative;
+    margin-top: 64%;
+    margin-left: 45%;
+    
+}
+
+#demande_devis i {
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+}
+
+#demande_devis i:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -3px;
+  transition: 0.5s;
+}
+
+#demande_devis:hover i {
+  padding-right: 25px;
+}
+
+#demande_devis:hover i:after {
+  opacity: 1;
+  right: 0;
+}

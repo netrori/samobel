@@ -1,0 +1,165 @@
+<!--Partie autonome de la page-->
+
+     <div id="banniere_image" class="container-fluid">
+      <div class="row">
+        <div class="col-md-3 text-center" id="presentation">
+          <h2>Samobel</h2>
+          <h3>Société de Menuiserie et d'aménagement d'intérieur</h3>
+          <p>Aménagement intérieur - Aménagement de cuisines - Aménagement de dressing - Fabrication de meubles - Installation de fenêtres - Menuiserie - Menuiserie intérieure - Parquets</p>
+        </div>
+        <div class="col-md-4 col-md-push-4">
+          <button type="submit"
+                  class="btn btn-danger btn-lg" 
+                  id="demande_devis" 
+                  (click)="onNavig()"><i>Demandez un devis</i></button>
+        </div>
+      </div>
+    </div>
+      
+    
+<!--Fin de la Partie autonome de la page-->
+
+<!-- Titre sous image -->
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 text-center">
+        <p id="titre_milieu">SAMOBEL VOTRE MEUNISIER A KENITRA</p>
+      </div>
+
+      <div class="col-md-2 col-md-offset-5" id="ligne_sous_titre"></div>
+  </div>
+</div>
+
+<!-- fin du titre -->
+
+<!-- Texte de présentation -->
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 text-center" id="presentation_text">
+         
+        <p id="image_pres">
+        <img src="./assets/menuisier-image.jpg"/>
+        </p>
+      
+        <h3 id="titre_text_pres">Présentation :</h3>
+        <span>
+         <p id="texte_pres_1">
+            Situé à Kénitra, la société de <strong>menuiserie</strong> SAMOBEL vous accompagne dans tout vos projets d'<strong>aménagement intérieur</strong>. Vous serez assister par nos <strong>artisans expérimentés</strong>, qui assureront la qualité du travail et des produits. Nous offrons une large gamme de prestations tels que la réalisation de tout type de <strong>meuble sur mesure, de fenêtre en bois, d'escalier</strong>.
+            <br/> <br/>
+         </p>
+         <p id="texte_pres_1"> 
+            Chez Samobel Nos artisans sont qualifés pour tout type de travaux d'aménagement tels que l'<strong>installation de fenêtres, menuiserie générale, pose de parquets, aménagement de dressing, aménagement de cuisine,   menuiserie intérieure et fabrication de meubles sur mesure.</strong>
+             
+          <br/><br/>
+         </p>
+         <p id="texte_pres_1"> Nous intervenons dans la ville de<strong> Rabat, Salé et Kénitra</strong> et souhaitons par la suite étendre sa zone d'intervention dans tout le <strong>Maroc.</strong> Nos menuisiers vous proposent de se déplacer directement à votre domicile! 
+         Afin de vous aider nous avons mis en place un service de devis où vous serez libre de choisir la date et l'heure. 
+          <strong> Alors n'hésitez plus et prenez rendez-vous!   </strong>
+         </p>
+       </span>
+      </div>
+  </div>
+</div>
+
+<!-- fin du Texte de présentation -->
+
+<!-- Titre image prestations -->
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 text-center">
+        <p id="titre_prestation">Les offres de Prestations</p>
+      </div>
+
+      <div class="col-md-4 col-md-offset-4" id="ligne_sous_titre_prestation"></div>
+  </div>
+</div>
+
+<!-- Fin Titre image prestations -->
+
+<!-- Image prestations -->
+<div class="container text-center">
+  
+  <div class="row">
+
+    <div class="col-md-4">
+          <img  src="./assets/amenagement_cuisine.jpg" 
+                class="img-circle" 
+                alt="Lights" 
+                id="img_presta"
+                data-slide-to="0" 
+                data-target="#myCarousel"
+                (click)="onNavigImg()">
+         <div class="caption" id="caption_img">
+            <p>Aménagement de cuisines</p>
+         </div>
+    </div>
+
+    <div class="col-md-4">
+          <img  src="./assets/amenag-int.jpg" 
+                class="img-circle" 
+                alt="Lights" 
+                id="img_presta"
+                data-slide-to="1" 
+                data-target="#myCarousel"
+                (click)="onNavigImg()">
+          <div class="caption" id="caption_img">
+            <p>Aménagement intérieur</p>
+         </div>
+    </div>
+
+    <div class="col-md-4">
+          <img  src="./assets/dressing.jpg"
+                class="img-circle" 
+                alt="Lights" 
+                id="img_presta"
+                data-slide-to="2" 
+                data-target="#myCarousel"
+                (click)="onNavigImg()">
+          <div class="caption" id="caption_img">
+            <p>Aménagement de dressing</p>
+         </div>
+    </div>
+
+    <div class="col-md-4">
+          <img  src="./assets/meuniserie.jpg" 
+                class="img-circle" 
+                alt="Lights" 
+                id="img_presta"
+                data-slide-to="3" 
+                data-target="#myCarousel"
+                (click)="onNavigImg()">
+          <div class="caption" id="caption_img">
+            <p>Menuiserie</p>
+         </div>
+    </div>
+    <div class="col-md-4">
+          <img  src="./assets/menuiserie-int.jpg" 
+                class="img-circle" 
+                alt="Lights" 
+                id="img_presta" 
+                data-slide-to="4" 
+                data-target="#myCarousel" 
+                (click)="onNavigImg()">
+          <div class="caption" id="caption_img">
+            <p>Menuiserie intérieure</p>
+         </div>
+    </div>
+
+    <div class="col-md-4">
+          <img  src="./assets/meubles.jpg" 
+                class="img-circle" 
+                alt="Lights" 
+                id="img_presta"
+                data-slide-to="5" 
+                data-target="#myCarousel"
+                (click)="onNavigImg()">
+          <div class="caption" id="caption_img">
+            <p>Fabrication de meubles</p>
+         </div>
+    </div>
+
+  </div>
+</div>
+
+      

@@ -1,0 +1,140 @@
+
+#ligne_sous_titre {
+
+     background-color : #9AA5A7;
+     height:5px;
+     border-radius: 50px;
+     margin-top: 10px;
+}
+
+#presentation_text{
+
+    background-color : #F6F5F1;
+    margin-top: 30px;
+    border: 3px #A88D6F solid;
+}
+
+#texte_pres_1{
+    text-align: justify;
+    text-indent: 50px;
+    font-size : 1.2em;
+}
+
+#image_pres img {
+
+    float: left;
+    width: 340px;
+    height: 340px;
+    margin-left : -16px;
+}
+
+#titre_text_pres{
+     text-decoration: underline;
+     font-size : 1.4em;
+}
+
+span {
+position : relative;
+left : 10px;
+ 
+}
+
+#myCarousel{
+  width: 900px;
+  height: 400px;
+  margin-left: 300px;
+  margin-top: -400px;
+  margin-bottom: 50px;
+}
+
+.carousel .item {
+width: 100%;
+height: 400px;
+background-color: #9AA5A7;
+}
+.carousel-indicators li{
+  background: #9AA5A7;
+}
+
+.carousel-indicators .active{
+    background-color: #A88D6F;
+}
+
+#menu_pres{
+  border: 4px #9AA5A7 solid;
+  background-color: #F6F5F1;
+  height: 400px;
+  margin-left: -100px;
+ }
+
+#demande_devis 
+{    
+    border-radius: 14px;
+    margin-top: 10%;      
+}
+
+#demande_devis i 
+{
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+}
+
+#demande_devis i:after 
+{
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -3px;
+  transition: 0.5s;
+}
+
+#demande_devis:hover i 
+{
+  padding-right: 25px;
+}
+
+#demande_devis:hover i:after 
+{
+  opacity: 1;
+  right: 0;
+}
+
+
+#banniere_image
+{
+    /*Caractèristique du fond*/
+
+    background: url('../../assets/prestation.jpg'); 
+    opacity: 0.6;
+
+
+    /*Caractèristique des dimensions*/
+
+    height: 300px; /* hauteur de l'image */
+    background-size: 100%;/* largeur de l'image */
+    margin-bottom: 50px;
+}
+
+            /*--- css pour le texte ---*/
+
+#presentation 
+{   
+  margin-top:100px;
+  color: black;
+}
+
+
+#titre_list_pres{
+  font-size:1.2em;
+  margin-bottom:15px;
+}
+
+#titre_nav{
+  font-size:1.1em;
+}
+ #text_carousel{
+ margin-left:350px;
+ margin-top:30px;
+ }

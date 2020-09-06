@@ -1,0 +1,52 @@
+ <div id="banniere_image" class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 text-center" id="presentation">
+          <h1> Un devis personnalisé, prenez votre rendez-vous dés maintenant !</h1>
+        </div>
+      </div>
+    </div>
+
+<div class="container" style=" width: 100%;margin-bottom: 80px;">
+    <div class="col-md-6">
+<kendo-scheduler
+    [kendoSchedulerBinding]="editService.events | async"
+    [modelFields]="editService.fields"
+    [loading]="editService.loading"
+    [editable]="true"
+    [selectedDate]="selectedDate"
+    (slotDblClick)="slotDblClickHandler($event)"
+    (eventDblClick)="eventDblClickHandler($event)"
+    (remove)="removeHandler($event)"
+    scrollTime="08:00"
+    workWeekEnd="6"
+    workDayEnd="21:00"
+    style="height: 600px;"
+    >
+        <kendo-scheduler-week-view >
+        </kendo-scheduler-week-view>
+
+        <kendo-scheduler-messages
+            today="Aujourd'hui"
+            allDay="Journée complete"
+            dayViewTitle="Jour"
+            weekViewTitle="Semaine"
+            monthViewTitle="Mois"
+            showWorkDay="Voir les heures de travail "
+            showFullDay="Voir jour complet"
+            >
+        </kendo-scheduler-messages>
+
+
+</kendo-scheduler>
+</div>
+<div class="col-md-4" style="margin-left: 100px;">
+<scheduler-edit-form
+    [event]="editedEvent"
+    [editMode]="editMode"
+    [isNew]="isNew"
+    (save)="saveHandler($event)"
+    (cancel)="cancelHandler()"
+    >
+</scheduler-edit-form>
+</div>
+</div>

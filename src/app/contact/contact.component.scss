@@ -1,0 +1,82 @@
+
+.container{
+    margin-top:50px;
+    margin-bottom:50px;
+    background-color: #F6F5F1;
+    border: 5px #A88D6F solid;
+    border-radius:50px;
+    
+
+}
+
+div .container{
+    vertical-align: middle;
+}
+.form-group50{
+	width: 45%;
+    float: left;/*les photos sont disposés par rapport au côté gauche du bloc*/
+    margin: 20px;/*pour écarter les photos les unes par rapport aux autres. Une valeur définit la marge pour les quatre côtés de la boîte*/
+}
+
+#fg100{
+     /*margin-top: 100px;*/
+}
+
+
+.form-group100{
+    width: 95.2%;
+    margin: 20px;
+    overflow: auto; /*Gére le dépassement du contenu des éléments dans le bloc*/
+}
+
+
+#fg100{
+     /*margin-top: 500px;*/
+     margin-right: 20px;
+     margin-bottom: 20px; 
+}
+
+#env{
+	float: right;
+	margin-right: 80px;
+    margin-bottom: 20px;
+}
+
+
+#banniere_image
+{
+    /*Caractèristique du fond*/
+
+    background: url('../../assets/contact.jpg') 100%;
+    opacity: 0.6;
+
+
+    /*Caractèristique des dimensions*/
+
+    height: 300px; /* hauteur de l'image */
+    background-size: 100%;/* largeur de l'image */
+
+    margin-bottom: 50px;
+}
+
+            /*--- css pour le texte ---*/
+
+#presentation 
+{   
+  margin-top:100px;
+  color: black;
+}
+
+#presta{
+   margin-top:30px;
+}
+
+#titre_list_pres{
+  font-size:1.2em;
+  margin-bottom:15px;
+}
+
+ #text_carousel{
+ margin-left:350px;
+ margin-top:30px;
+ }

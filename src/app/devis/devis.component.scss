@@ -1,0 +1,28 @@
+scheduler-edit-form{
+		width: 550px;
+  	height: 400px;
+	}
+
+#banniere_image
+{
+    /*Caractèristique du fond*/
+
+    background: url('../../assets/devis3.jpg') 100%;
+    opacity: 0.6;
+
+
+    /*Caractèristique des dimensions*/
+
+    height: 300px; /* hauteur de l'image */
+    background-size: 100%;/* largeur de l'image */
+
+    margin-bottom: 50px;
+}
+
+            /*--- css pour le texte ---*/
+
+#presentation 
+{   
+  margin-top:100px;
+  color: black;
+}

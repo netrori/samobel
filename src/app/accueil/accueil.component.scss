@@ -1,0 +1,152 @@
+/*------------------------------------------------------------------*/
+/*---------------------Banniere demande de devis -------------------*/
+/*------------------------------------------------------------------*/
+            
+            /*--- mise en place du bloc image globale ---*/
+
+#banniere_image
+{
+    /*Caractèristique du fond*/
+
+    background: url('../../assets/pres3.jpg'); 
+    opacity: 0.6;
+
+
+    /*Caractèristique des dimensions*/
+
+    height: 400px; /* hauteur de l'image */
+    background-size: 100%;/* largeur de l'image */
+}
+
+            /*--- css pour le texte ---*/
+
+#presentation 
+{   
+    color: #F6F5F1;
+}
+
+            /*--- Mise en place du button interactif ---*/
+
+#demande_devis 
+{    
+    border-radius: 14px;
+    position: relative;
+    margin-top: 64%;
+    margin-left: 45%;    
+}
+
+#demande_devis i 
+{
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+}
+
+#demande_devis i:after 
+{
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -3px;
+  transition: 0.5s;
+}
+
+#demande_devis:hover i 
+{
+  padding-right: 25px;
+}
+
+#demande_devis:hover i:after 
+{
+  opacity: 1;
+  right: 0;
+}
+/*------------------------------------------------------------------*/
+/*--------------Fin de la banniere de demande de devis--------------*/
+/*------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------*/
+/*---------------------Milieu de page d'accueil --------------------*/
+/*------------------------------------------------------------------*/
+
+#titre_milieu {
+    
+    color : #A88D6F;
+    font-size: 1.3em;
+    margin-top: 10px;
+}
+
+#ligne_sous_titre {
+
+     background-color : #9AA5A7;
+     height:5px;
+     border-radius: 50px;
+     margin-top: 10px;
+}
+
+#presentation_text{
+
+    background-color : #F6F5F1;
+    margin-top: 30px;
+    border: 3px #A88D6F solid;
+}
+
+#texte_pres_1{
+    text-align: justify;
+    text-indent: 50px;
+    font-size : 1.2em;
+}
+
+#image_pres img {
+    
+    opacity: 0.6;
+    filter: grayscale(100%);
+    float: left;
+    width: 400px;
+    height: 400px;
+    margin-left : -16px;
+}
+
+#titre_text_pres{
+     text-decoration: underline;
+}
+span {
+position : relative;
+left : 10px;
+ 
+}
+
+/*------------------------------------------------------------------*/
+/*-------------------Fin Milieu de page d'accueil ------------------*/
+/*------------------------------------------------------------------*/
+
+#titre_prestation 
+{  
+    color : #A88D6F;
+    font-size: 1.9em;
+    margin-top: 80px;
+}
+
+#ligne_sous_titre_prestation {
+
+     background-color : #9AA5A7;
+     height:5px;
+     border-radius: 50px;
+     margin-top: 10px;
+}
+
+#img_presta
+{
+  width:180px; 
+  height: 180px;
+  margin-top: 80px;
+}
+
+#caption_img
+{
+  color : #A88D6F;
+  font-size: 1.2em;
+  font-weight:bold;
+  margin-top: 20px;
+}
