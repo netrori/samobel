@@ -4,11 +4,6 @@
                     <legend>{{ isNew ? 'Prendre rendez-vous' : 'Edit Event' }}</legend>
 
                     <div class="k-form-field">
-                        <span>Title</span>
-                        <input class="k-textbox" placeholder="Title" formControlName="Title" />
-                    </div>
-
-                    <div class="k-form-field">
                         <span>Nom</span>
                         <input class="k-textbox" placeholder="Nom" formControlName="Nom" />
                     </div>
@@ -22,7 +17,10 @@
                         <span>Adresse</span>
                         <input class="k-textbox" placeholder="Adresse" formControlName="Adresse" />
                     </div>
-
+                    <div class="k-form-field">
+                        <span>Demande</span>
+                        <textarea  placeholder="Demande" formControlName="Demande" style="width: 281px; height: 104px;"></textarea>
+                    </div>
                    <!-- <div class="k-form-field">
                         <span>Téléphone</span>
                         <input class="k-textbox" placeholder="0666378953" formControlName="Phone" />
@@ -43,9 +41,9 @@
                     </div>
                     <div class="k-form-field k-datetime-picker-wrapper">
                         <span>End</span>
-                        <kendo-datepicker formControlName="End">
+                        <kendo-datepicker formControlName="End" [disabled] = 'true'>
                         </kendo-datepicker>
-                        <kendo-timepicker formControlName="End" *ngIf='!editForm.controls.IsAllDay.value'>
+                        <kendo-timepicker formControlName="End" [interval] = '15' *ngIf='!editForm.controls.IsAllDay.value'>
                         </kendo-timepicker>
                     </div>
                     <div class="k-form-field">

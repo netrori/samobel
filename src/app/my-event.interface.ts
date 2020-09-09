@@ -1,5 +1,6 @@
 
 export interface MyEvent {
+    id?: string;
     TaskID?: number;
     OwnerID?: number;
     Title?: string;
@@ -7,11 +8,10 @@ export interface MyEvent {
     Prenom?: string;
     Adresse?: string;
     
-    Description?: string;
+    Demande?: string;
     Start?: Date;
     End?: Date;
-    StartTimezone?: string;
-    EndTimezone?: string;
+
     IsAllDay?: boolean;
     RecurrenceException?: any;
     RecurrenceID?: number;
