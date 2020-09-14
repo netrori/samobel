@@ -8,43 +8,66 @@
 
 <div class="container">
 
-  <form method="post">
+  <form novalidate [formGroup]="contactForm" #fform="ngForm" (ngSubmit)="onSubmit()"  > 
    <!--Les inputs ont une largeur de 50% -->
-   <div id="fg50">
-  	<div class="form-group50">
-      <label for="nom">Nom:</label>
-      <input type="nom" class="form-control" id="nom" placeholder="Entrez votre nom">
-    </div>
-    <div class="form-group50">
-      <label for="prenom">Prénom:</label>
-      <input type="prenom" class="form-control" id="prenom" placeholder="Entrez votre prénom">
-    </div>
-    <div class="form-group50">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Entrez votre email">
-    </div>
-    <div class="form-group50">
-      <label for="tel">Téléphone:</label>
-      <input type="tel" class="form-control" id="tel" placeholder="Entrez votre numéro de téléphone">
-    </div>
-    </div>
+      <p>
+        
+      <mat-form-field class="width">
+        <input matInput type="nom" class="form-control" id="nom" placeholder="Entrez votre nom" style="padding-left: 2%;" formControlName="nom">
+        <mat-error *ngIf="contactForm.get('nom').hasError('required') && contactForm.get('nom').touched">
+          Last name is required
+        </mat-error>
+      </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="half-width">
+          <input matInput type="prenom" class="form-control" id="prenom" placeholder="Entrez votre prénom" style="padding-left: 2%;" formControlName="prenom">
+          <mat-error *ngIf="formErrors.email">
+            {{ formErrors.prenom}}
+          </mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="half-width">
+          <input matInput type="email" class="form-control" id="email" placeholder="Entrez votre email" style="padding-left: 2%;" formControlName="email">
+          <mat-error *ngIf="formErrors.email">
+            {{ formErrors.email}}
+        </mat-error>
+        </mat-form-field>  
+      </p>
+      <p>
+        <mat-form-field class="half-width">
+          <input matInput type="tel" class="form-control" pattern="^\d*[0-9]\d*$" id="tel" placeholder="Entrez votre numéro de téléphone" style="padding-left: 2%;" formControlName="tel">
+          <mat-error *ngIf="formErrors.tel">
+            {{ formErrors.tel}}
+          </mat-error>
+        </mat-form-field>
+      </p>
 
    <!--Les inputs ont une largeur de 100% -->
-   <div id="fg100">
-    <div class="form-group100">
-      <label for="suj">Sujet:</label>
-      <input type="suj" class="form-control" id="suj" placeholder="Entrez le sujet de votre demande">
-    </div>
-    <div class="form-group100">
-      <label for="msg">Message:</label>
-      <textarea class="form-control" rows="6" id="msg" placeholder="Entrez votre message ici"></textarea>
+      <p>
+      <mat-form-field class="width">
+        <input matInput type="suj" class="form-control" id="suj" placeholder="Entrez le sujet de votre demande" style="padding-left: 2%;"  formControlName="suj">
+        <mat-error *ngIf="formErrors.suj">
+          {{ formErrors.suj}}
+        </mat-error>
+      </mat-form-field>
+      </p>
+  
+      <p> 
+      <mat-form-field class="width">
+        <textarea matInput class="form-control" rows="6" id="msg" placeholder="Entrez votre message ici" style="padding-left: 2%;" formControlName="msg"></textarea>
+        <mat-error *ngIf="formErrors.msg">
+          {{ formErrors.msg}}
+        </mat-error>
+      </mat-form-field>
+      </p>
       <!--<input type="msg" class="form-control" id="msg" placeholder="Entrez votre message ici">-->
-    </div>
-    </div>
+    
 
    <!--Bouton d'envoie-->  
    <div id="env">
-    <button type="envoie" class="btn btn-default">Envoyez</button>
+    <button  type="submit" mat-button class="btn btn-default" [disabled]="contactForm.invalid">Envoyez</button>
    </div>
 
   </form>

@@ -4,8 +4,9 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
-import {RouterModule, Routes} from '@angular/router';
-
+import { RouterModule, Routes } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { SchedulerModule } from '@progress/kendo-angular-scheduler';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
@@ -54,7 +55,9 @@ const appRoutes : Routes = [
     ButtonsModule,
     DateInputsModule,
     FormsModule,
+    MatInputModule,
     HttpClientJsonpModule,
+    MatFormFieldModule,
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
