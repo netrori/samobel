@@ -7,7 +7,7 @@ import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import { MatDialogModule } from '@angular/material/dialog';
 import { SchedulerModule } from '@progress/kendo-angular-scheduler';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
@@ -19,13 +19,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SchedulerEditFormComponent } from './edit-form/edit-form.component';
 import { EditService } from './services/edit.service';
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent, ContactConfirmationDialog } from './contact/contact.component';
 import { RealisationComponent } from './realisation/realisation.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { AmenagementInterieurComponent } from './amenagement-interieur/amenagement-interieur.component';
 import { PrestationsComponent } from './prestations/prestations.component';
 import { DevisComponent } from './devis/devis.component';
-
+import { CommonModule } from '@angular/common';
 
 const appRoutes : Routes = [
 {path: 'accueil', component : AccueilComponent },
@@ -46,14 +46,17 @@ const appRoutes : Routes = [
     DevisComponent,
     PrestationsComponent,
     RealisationComponent,
-    SchedulerEditFormComponent
+    SchedulerEditFormComponent,
+    ContactConfirmationDialog
   ],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
+    CommonModule,
     ButtonsModule,
     DateInputsModule,
+    MatDialogModule,
     FormsModule,
     MatInputModule,
     HttpClientJsonpModule,

@@ -1,7 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { ContactService } from '../services/contact.service';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Routes, Router, RouterModule, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -12,6 +14,7 @@ export class ContactComponent implements OnInit {
 
   contactForm: FormGroup;
   errMess : string;
+  response : string;
   @ViewChild('fform') feedbackFormDirective;
   formErrors = {
     'prenom': '',
@@ -48,7 +51,8 @@ export class ContactComponent implements OnInit {
     }
   };
 
-  constructor(private fb: FormBuilder, private contactService: ContactService) { 
+  constructor(private fb: FormBuilder, private contactService: ContactService,
+    public dialog: MatDialog, private router: Router) { 
     this.createForm();
   }
 
@@ -98,12 +102,40 @@ onSubmit() {
     this.contactService.sendEmail({
       from: 'Mailgun Sandbox <postmaster@sandboxec4031dc7c414d41ba658caebb7fec9e.mailgun.org',
       to: 'redarebouh@outlook.com',
-      name: 'name',
-      text: this.contactForm.value.msg
+      subject: this.contactForm.value.suj,
+      firstname: this.contactForm.value.prenom,
+      lastname: this.contactForm.value.nom,
+      text: this.contactForm.value.msg,
+      tel: this.contactForm.value.tel
     }).subscribe(
-      () => {},
-      err => console.log(err)
+      () => {
+        this.openDialog('success');
+      },
+      err => {
+        console.log(err);
+        this.openDialog('error');
+      }
+ 
     );
   }
+ 
+  openDialog(data: string) {
+    this.dialog.open(ContactConfirmationDialog, {
+      data
+    });
+  }
 
+}
+
+@Component({
+  selector: 'contact-confirmation-dialog',
+  templateUrl: 'contact-confirmation.html',
+  styleUrls: ['./contact.component.scss']
+})
+export class ContactConfirmationDialog {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: string, private router: Router) {}
+
+  onClick() {
+    this.router.navigate([''], { fragment: 'top'});
+  }
 }

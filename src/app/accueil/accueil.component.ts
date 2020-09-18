@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-
+import {Router, NavigationEnd} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-accueil',
@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 })
 export class AccueilComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   onNavig(){
 
@@ -22,6 +22,13 @@ export class AccueilComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      const id: string =  params.id;
+    });
+ 
   }
+  ngAfterViewChecked() {
+    window.scrollTo(0, 0);
+    }
 
 }

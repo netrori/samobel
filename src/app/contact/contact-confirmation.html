@@ -1,0 +1,13 @@
+    <div class="container-dialog">
+        <h1 mat-dialog-title>
+            <span *ngIf="data == 'success'" > Confirmation </span> 
+            <span *ngIf="data == 'error'" > Erreur </span> 
+         </h1>
+        <div mat-dialog-content>
+          <span *ngIf="data == 'success'" > Votre message à bien été transmis </span> 
+          <span *ngIf="data == 'error'" > Votre message n'a pas pu être ennvoyé, suite à une erreur interne</span> 
+        </div>
+        <mat-dialog-actions align="end">
+            <button class="btn btn-default"  [mat-dialog-close]="true" (click)="onClick()">OK</button>
+        </mat-dialog-actions>    
+    </div>
