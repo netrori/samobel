@@ -31,7 +31,7 @@ export class ContactService {
     };
 
     return  this.http.post('http://localhost:1337/email/',data, httpOptions)
-    .pipe(timeout(5000), catchError(this.handleError)); 
+    .pipe(timeout(5000)).pipe(catchError(this.handleError)); 
   }
   public handleError(error: HttpErrorResponse | any) {
     let errMsg: string;

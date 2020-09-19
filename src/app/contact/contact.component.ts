@@ -109,15 +109,21 @@ onSubmit() {
       text: this.contactForm.value.msg,
       tel: this.contactForm.value.tel
     }).subscribe(
-      (success) => {
-        console.log(success);
-        this.openDialog('success');
+      () => {
         this.submited=true;
+        this.openDialog('success');
       },
       err => {
-        console.log(err);
-        this.errMess=err;
-        this.openDialog('error');
+        if(err == 'undefined -  undefined') {
+          this.submited=true;
+          this.openDialog('success');
+        }
+        else {
+          console.log(err);
+          this.errMess=err;
+          this.openDialog('error');
+        }
+        
       }
  
     );
