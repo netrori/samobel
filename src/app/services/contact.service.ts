@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, timeout } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
 @Injectable({
@@ -29,9 +29,9 @@ export class ContactService {
         'Content-Type': 'application/json'
       })
     };
-    
-    return  this.http.post('http://localhost:1337/email/',data, httpOptions).pipe(
-                    catchError(this.handleError)); 
+
+    return  this.http.post('http://localhost:1337/email/',data, httpOptions)
+    .pipe(timeout(5000), catchError(this.handleError)); 
   }
   public handleError(error: HttpErrorResponse | any) {
     let errMsg: string;
