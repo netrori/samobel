@@ -12,9 +12,7 @@ import { SchedulerModule } from '@progress/kendo-angular-scheduler';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import '@progress/kendo-angular-intl/locales/fr/all';
-
-
-
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SchedulerEditFormComponent } from './edit-form/edit-form.component';
@@ -59,6 +57,7 @@ const appRoutes : Routes = [
     MatDialogModule,
     FormsModule,
     MatInputModule,
+    BrowserModule,
     HttpClientJsonpModule,
     MatFormFieldModule,
     HttpClientModule,
@@ -68,6 +67,10 @@ const appRoutes : Routes = [
   ],
 
   providers: [EditService , {provide: LOCALE_ID,useValue: 'fr'}],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
+  ]
 })
 export class AppModule { }

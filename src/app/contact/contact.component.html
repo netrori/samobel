@@ -8,7 +8,7 @@
 
 <div class="container">
 
-  <form novalidate [formGroup]="contactForm" #fform="ngForm" (ngSubmit)="onSubmit()"  > 
+  <form novalidate [formGroup]="contactForm" #fform="ngForm" (ngSubmit)="onSubmit()" [hidden]="submited===false" > 
    <!--Les inputs ont une largeur de 50% -->
       <p>
         
@@ -71,4 +71,8 @@
    </div>
 
   </form>
+  <div fxFlex [hidden]="submited!=false" style="margin-left: 35%;">
+    <th-spinner s-img="assets/spinner.gif"></th-spinner>
+    <h4>Formulaire en cours d'envoi ...</h4>
+  </div>
 </div>

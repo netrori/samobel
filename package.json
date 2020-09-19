@@ -40,6 +40,7 @@
     "@progress/kendo-recurrence": "^1.0.0",
     "@progress/kendo-theme-default": "latest",
     "bootstrap": "^3.3.7",
+    "bower": "^1.8.8",
     "rxjs": "~6.5.5",
     "rxjs-compat": "^6.6.2",
     "th-spinner": "^1.5.0",

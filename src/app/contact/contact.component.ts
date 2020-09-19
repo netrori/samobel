@@ -13,6 +13,7 @@ import { Routes, Router, RouterModule, NavigationEnd } from '@angular/router';
 export class ContactComponent implements OnInit {
 
   contactForm: FormGroup;
+  submited: boolean;
   errMess : string;
   response : string;
   @ViewChild('fform') feedbackFormDirective;
@@ -69,7 +70,6 @@ export class ContactComponent implements OnInit {
        msg: ['',[Validators.required]]
 
     });
-
     this.contactForm.valueChanges.subscribe(data => {
       this.onValueChanged(data);
     });
@@ -98,21 +98,25 @@ export class ContactComponent implements OnInit {
 }
 onSubmit() {
     console.log(this.contactForm.value);
-   
+    window.scrollTo(350, 350);
+    this.submited = false;
     this.contactService.sendEmail({
       from: 'Mailgun Sandbox <postmaster@sandboxec4031dc7c414d41ba658caebb7fec9e.mailgun.org',
-      to: 'redarebouh@outlook.com',
+      to: 'menuisiersamobel@gmail.com',
       subject: this.contactForm.value.suj,
       firstname: this.contactForm.value.prenom,
       lastname: this.contactForm.value.nom,
       text: this.contactForm.value.msg,
       tel: this.contactForm.value.tel
     }).subscribe(
-      () => {
+      (success) => {
+        console.log(success);
         this.openDialog('success');
+        this.submited=true;
       },
       err => {
         console.log(err);
+        this.errMess=err;
         this.openDialog('error');
       }
  
